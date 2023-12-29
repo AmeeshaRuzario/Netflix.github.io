@@ -7,7 +7,12 @@
 
 /* Body styles */
 body {
-  font-family: "Netflix Sans", sans-serif;
+  font-family: "Chakra Petch", sans-serif;
+  font-family: "Playfair Display", serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Satisfy", cursive;
+  font-family: "Tinos", serif;
+  font-family: "Yantramanav", sans-serif;
   background-color: #111;
   color: #fff;
 }
@@ -30,7 +35,7 @@ body {
   align-items: center;
   padding: 20px 40px;
   top: 0;
-  background-color: #111;
+  background-color: transparent; /* Transparent background */
   position: fixed;
   width: 100%;
   z-index: 1;
@@ -39,7 +44,7 @@ body {
 }
 
 .nav.active {
-  background-color: #111;
+  background-color: rgba(17, 17, 17, 0.8); /* Light background color */
 }
 
 .nav__left {
@@ -73,33 +78,49 @@ body {
   background-position: center center;
   color: #fff;
   object-fit: contain;
-  height: 644px;
+  height: 100vh; /* Increased height */
+  position: relative;
 }
 
 #banner__contents {
   margin-left: 70px;
   padding-top: 340px;
   height: 190px;
+  animation: bannerAnimation 3s infinite; /* Banner animation every 3 seconds */
+}
+
+@keyframes bannerAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  25%,
+  75% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0);
+  }
 }
 
 #banner__title {
-  font-size: 3rem;
+  font-size: 3.5rem; /* Increased font size */
   font-weight: 800;
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.5rem; /* Increased padding */
 }
 
 #banner__description {
-  width: 45rem;
+  width: 50rem; /* Increased width */
   line-height: 1.5;
   padding-top: 1rem;
-  font-size: 0.9rem;
-  max-width: 360px;
-  height: 80px;
+  font-size: 1rem; /* Increased font size */
+  max-width: 600px; /* Increased max-width */
+  height: 120px; /* Increased height */
 }
 
 /* Banner buttons styles */
 #banner__buttons {
-  margin-top: 1rem;
+  margin-top: 2rem; /* Increased margin */
 }
 
 #banner__button {
@@ -110,15 +131,15 @@ body {
   border-radius: 0.2vw;
   border: none;
   margin-right: 1rem;
-  background-color: transparent; /* Remove background color */
-  padding: 0.5rem 2rem;
-  border: 2px solid #fff; /* Add border to make it look like a button */
+  background-color: transparent;
+  padding: 1rem 2rem; /* Increased padding */
+  border: 2px solid #fff;
 }
 
 #banner__button:hover {
   color: #e6e6e6;
   background-color: transparent;
-  border-color: #e6e6e6; /* Change border color on hover */
+  border-color: #e6e6e6;
   transition: all 0.3s;
 }
 
@@ -131,14 +152,16 @@ body {
 .row {
   margin-left: 20px;
   color: white;
+  margin-bottom: 30px; /* Increased margin */
 }
 
 .row__poster {
   object-fit: contain;
   width: 100%;
-  max-height: 120px;
+  max-height: 300px;
   margin-right: 10px;
   transition: transform 500ms;
+  height: 200px;
 }
 
 .row__posters::-webkit-scrollbar {
@@ -149,7 +172,7 @@ body {
   display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
-  padding: 20px;
+  padding: 10px;
 }
 
 .row__poster:hover {
@@ -161,8 +184,8 @@ body {
 .row__posterLarge2 {
   object-fit: contain;
   width: 100%;
-  max-height: 250px;
-  margin-right: 10px;
+  max-height: 350px;
+  margin-right: 15px;
   transition: transform 500ms;
 }
 
@@ -171,4 +194,65 @@ body {
 .row__posterLarge2:hover {
   transform: scale(1.09);
   opacity: 1;
+}
+.footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  bottom: 0;
+  width: 100%;
+  font-size: 20px;
+}
+/* Mobile Responsive Styles */
+
+/* For screens smaller than 768px */
+@media screen and (max-width: 768px) {
+  .nav {
+    padding: 15px 20px; /* Adjusted padding for smaller screens */
+  }
+
+  #banner__contents {
+    margin-left: 20px;
+    padding-top: 250px; /* Adjusted padding for banner */
+    height: auto;
+  }
+
+  #banner__title {
+    font-size: 2.5rem; /* Adjusted font size for smaller screens */
+    padding-bottom: 0.3rem;
+  }
+
+  #banner__description {
+    width: 100%; /* Full width for smaller screens */
+    padding-top: 0.5rem; /* Adjusted padding */
+    font-size: 0.8rem; /* Adjusted font size for smaller screens */
+    max-width: 100%; /* Full width for smaller screens */
+    height: auto; /* Auto height for smaller screens */
+  }
+
+  #banner__buttons {
+    margin-top: 1.5rem; /* Adjusted margin for smaller screens */
+  }
+
+  #banner__button {
+    padding: 0.8rem 1.5rem; /* Adjusted padding for smaller screens */
+  }
+
+  .row {
+    margin-left: 10px; /* Adjusted margin for smaller screens */
+    margin-bottom: 20px; /* Adjusted margin for smaller screens */
+  }
+
+  .row__poster {
+    max-height: 200px; /* Adjusted max height for smaller screens */
+    margin-right: 5px; /* Adjusted margin for smaller screens */
+  }
+
+  .row__posterLarge,
+  .row__posterLarge1,
+  .row__posterLarge2 {
+    max-height: 250px; /* Adjusted max height for smaller screens */
+    margin-right: 5px; /* Adjusted margin for smaller screens */
+  }
 }
